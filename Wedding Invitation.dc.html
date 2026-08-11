@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+window.__resources = {
+  "https://unpkg.com/react@18.3.1/umd/react.production.min.js": "./vendor/react.production.min.js",
+  "https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js": "./vendor/react-dom.production.min.js",
+  "https://unpkg.com/@babel/standalone@7.29.0/babel.min.js": "./vendor/babel.min.js"
+};
+</script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#FAF1E3;color:#26352F;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img{display:block;max-width:100%}
+a{color:#B79A5B;text-decoration:none}
+a:hover{color:#183C32}
+::selection{background:rgba(183,154,91,.28)}
+a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid #B79A5B;outline-offset:4px;border-radius:4px}
+@keyframes fu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes fi{from{opacity:0}to{opacity:1}}
+@keyframes fl{from{opacity:0;transform:translateX(-110px);filter:blur(7px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes fr{from{opacity:0;transform:translateX(110px);filter:blur(7px)}to{opacity:1;transform:none;filter:blur(0)}}
+@keyframes sc{from{opacity:0;transform:scale(.84)}to{opacity:1;transform:none}}
+@keyframes br{from{opacity:0;filter:blur(10px);transform:translateY(22px)}to{opacity:1;filter:blur(0);transform:none}}
+@keyframes dx{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes dy{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+@keyframes pl{from{transform:translateY(-5%)}to{transform:translateY(5%)}}
+@keyframes plr{from{transform:translateY(6%)}to{transform:translateY(-6%)}}
+@keyframes zin{from{transform:scale(1.14)}to{transform:scale(1)}}
+@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes gl{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(7px)}}
+@keyframes swell{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div ref="{{ rootRef }}" style="position:relative;overflow-x:clip;background:#FAF1E3;font-family:'Manrope',system-ui,sans-serif;color:#26352F;--gold:#B79A5B;--floral:1;--px:0px;--py:0px">
+
+  <div style="position:fixed;inset:0;z-index:70;pointer-events:none;opacity:.05;background-image:radial-gradient(rgba(38,53,47,.55) 1px, transparent 1px);background-size:3px 3px;mix-blend-mode:multiply"></div>
+
+  <div style="position:fixed;top:0;left:0;height:2px;z-index:75;background:linear-gradient(90deg,rgba(183,154,91,0),var(--gold));transition:width .25s linear;width:{{ progress }}%"></div>
+
+  <div style="position:fixed;inset:0;z-index:80;background:#FAF1E3;pointer-events:none;transition:opacity .42s ease-in-out;opacity:{{ veil }}"></div>
+
+  <section data-screen-label="01 Invitation Opening" aria-label="Wedding invitation opening" style="position:fixed;inset:0;z-index:90;background:#FAF1E3;overflow:hidden;display:grid;place-items:center;padding:clamp(24px,5vw,64px);transition:opacity 1150ms cubic-bezier(.4,0,.2,1),transform 1250ms cubic-bezier(.4,0,.2,1),visibility 1150ms;opacity:{{ coverOp }};transform:scale({{ coverSc }});pointer-events:{{ coverPE }};visibility:{{ coverVis }}">
+    <img src="art/pat1.png" alt="" style="position:absolute;top:-4%;right:-6%;width:min(52vw,660px);opacity:.5;pointer-events:none;animation:fi 2s ease-out both" />
+    <img src="art/f1-tl.png" alt="" style="position:absolute;top:-2%;left:-3%;width:clamp(158px,30vw,460px);pointer-events:none;transform:translate3d(calc(var(--px) * 1.1),calc(var(--py) * 1.1),0);animation:sc 2.1s cubic-bezier(.22,1,.36,1) .35s both" />
+    <img src="art/f1-br.png" alt="" style="position:absolute;bottom:-2%;right:-3%;width:clamp(170px,34vw,540px);pointer-events:none;transform:translate3d(calc(var(--px) * -1.3),calc(var(--py) * -1.3),0);animation:sc 2.1s cubic-bezier(.22,1,.36,1) .55s both" />
+
+    <div style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;text-align:center;max-width:1000px;width:100%">
+      <img src="art/star.png" alt="" style="width:clamp(34px,4vw,56px);opacity:.95;animation:sc 1.6s cubic-bezier(.22,1,.36,1) .3s both" />
+      <div style="display:flex;align-items:center;gap:clamp(12px,2vw,22px);margin-top:clamp(16px,2.4vw,28px);animation:fu 1.5s cubic-bezier(.22,1,.36,1) .6s both">
+        <span style="width:clamp(24px,7vw,80px);height:1px;background:linear-gradient(90deg,rgba(183,154,91,0),var(--gold))"></span>
+        <span style="font-size:clamp(9px,1.1vw,12px);letter-spacing:.42em;text-transform:uppercase;color:#8A8271;font-weight:500">The Wedding Invitation</span>
+        <span style="width:clamp(24px,7vw,80px);height:1px;background:linear-gradient(270deg,rgba(183,154,91,0),var(--gold))"></span>
+      </div>
+
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(6px,2vw,34px);margin-top:clamp(20px,3.4vw,46px)">
+        <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(42px,8.6vw,116px);line-height:.95;letter-spacing:.045em;color:#183C32;animation:fl 1.7s cubic-bezier(.22,1,.36,1) 1s both">AHMED</h1>
+        <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:clamp(40px,7.6vw,104px);line-height:1;color:var(--gold);animation:sc 1.5s cubic-bezier(.22,1,.36,1) 2s both">&amp;</span>
+        <h1 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(42px,8.6vw,116px);line-height:.95;letter-spacing:.045em;color:#183C32;animation:fr 1.7s cubic-bezier(.22,1,.36,1) 1.2s both">AAYESHA</h1>
+      </div>
+
+      <div style="width:min(520px,78%);height:1px;margin-top:clamp(18px,2.6vw,34px);background:linear-gradient(90deg,rgba(183,154,91,0),rgba(183,154,91,.85),rgba(183,154,91,0));transform-origin:center;animation:dx 1.6s cubic-bezier(.22,1,.36,1) 2.3s both"></div>
+
+      <p style="margin:clamp(16px,2.2vw,26px) 0 0;font-size:clamp(11px,1.35vw,15px);letter-spacing:.34em;text-transform:uppercase;color:#26352F;font-weight:400;animation:fu 1.4s cubic-bezier(.22,1,.36,1) 2.5s both">Are getting married</p>
+
+      <p style="margin:clamp(18px,2.6vw,32px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4.2vw,54px);letter-spacing:.14em;color:#183C32;font-weight:500;animation:fu 1.5s cubic-bezier(.22,1,.36,1) 3s both">12 &nbsp;·&nbsp; 12 &nbsp;·&nbsp; 2026</p>
+
+      <p style="margin:clamp(10px,1.4vw,16px) 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(14px,1.8vw,21px);color:#777267;animation:fi 1.6s ease-out 3.4s both">With the blessings of our families</p>
+
+      <button type="button" onClick="{{ open }}" aria-label="Open the wedding invitation" style="margin-top:clamp(26px,4vw,52px);display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:16px clamp(24px,3.4vw,44px);background:rgba(255,255,255,.42);border:1px solid rgba(183,154,91,.75);border-radius:4px;box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 10px 34px -22px rgba(24,60,50,.5);cursor:pointer;font-family:'Manrope',sans-serif;font-size:clamp(10px,1.15vw,13px);letter-spacing:.3em;text-transform:uppercase;color:#183C32;font-weight:500;transition:background .5s ease,border-color .5s ease,box-shadow .5s ease;animation:fu 1.5s cubic-bezier(.22,1,.36,1) 4s both" style-hover="background:rgba(255,255,255,.85);border-color:var(--gold);box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 40px -24px rgba(24,60,50,.55)">
+        <span>Open Invitation</span>
+        <span style="font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--gold);transition:transform .5s cubic-bezier(.22,1,.36,1)">→</span>
+      </button>
+
+      <div style="margin-top:clamp(22px,3vw,40px);width:34px;height:34px;border:1px solid rgba(183,154,91,.5);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:13px;animation:fi 1.4s ease-out 4.6s both">
+        <span style="animation:bob 2.8s ease-in-out infinite">↓</span>
+      </div>
+    </div>
+  </section>
+
+  <main style="position:relative;z-index:1">
+
+    <section id="home" data-screen-label="02 Home / Couple Hero" style="position:relative;overflow:hidden;min-height:100svh;display:grid;place-items:center;padding:clamp(78px,9vw,120px) clamp(20px,5vw,64px) clamp(150px,16vw,210px)">
+      <img src="art/pat1.png" alt="" style="position:absolute;top:0;left:50%;width:min(72vw,900px);transform:translateX(-50%);opacity:.34;pointer-events:none" />
+      <div style="position:absolute;top:0;left:0;width:clamp(140px,26vw,400px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f2-tl.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * 1.4),calc(var(--py) * 1.4),0)" />
+      </div>
+      <div style="position:absolute;top:0;right:0;width:clamp(120px,22vw,340px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f2-tr.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * -1.6),calc(var(--py) * -1.6),0)" />
+      </div>
+      <div style="position:absolute;bottom:0;left:0;width:clamp(130px,24vw,380px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f2-bl.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * 1.2),calc(var(--py) * 1.2),0)" />
+      </div>
+      <div style="position:absolute;bottom:0;right:0;width:clamp(120px,22vw,340px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f2-br.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * -1.2),calc(var(--py) * -1.2),0)" />
+      </div>
+
+      <div style="position:relative;z-index:2;width:100%;max-width:1120px;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <p style="margin:0;font-family:'Amiri',serif;font-size:clamp(19px,2.6vw,32px);color:var(--gold);direction:rtl;line-height:1.9;animation:fi 1.8s ease-out both;animation-timeline:view();animation-range:entry 2% entry 55%">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+        <p style="margin:clamp(10px,1.6vw,18px) 0 0;font-size:clamp(9px,1.1vw,12px);letter-spacing:.4em;text-transform:uppercase;color:#8A8271;font-weight:500;animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 4% entry 58%">Together with their families</p>
+
+        <div style="position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(4px,2vw,40px);margin-top:clamp(18px,3vw,40px)">
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,8vw,104px);line-height:1;letter-spacing:.05em;color:#183C32;animation:fl 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 6% entry 70%">AHMED</h2>
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(38px,7vw,92px);line-height:1;color:var(--gold);animation:sc 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 12% entry 74%">&amp;</span>
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,8vw,104px);line-height:1;letter-spacing:.05em;color:#183C32;animation:fr 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 6% entry 70%">AAYESHA</h2>
+        </div>
+
+        <div style="display:flex;align-items:center;gap:16px;margin-top:clamp(16px,2.4vw,30px);width:min(620px,90%)">
+          <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(183,154,91,0),rgba(183,154,91,.7));transform-origin:right;animation:dx 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 10% entry 66%"></span>
+          <span style="font-size:clamp(10px,1.25vw,14px);letter-spacing:.34em;text-transform:uppercase;color:#26352F;white-space:nowrap;animation:fi 1.4s ease-out both;animation-timeline:view();animation-range:entry 12% entry 70%">Are getting married</span>
+          <span style="flex:1;height:1px;background:linear-gradient(270deg,rgba(183,154,91,0),rgba(183,154,91,.7));transform-origin:left;animation:dx 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 10% entry 66%"></span>
+        </div>
+
+        <p style="margin:clamp(34px,5vw,64px) 0 0;font-size:clamp(9px,1.05vw,12px);letter-spacing:.4em;text-transform:uppercase;color:#8A8271;font-weight:500;animation:fu 1.3s ease-out both;animation-timeline:view();animation-range:entry 16% entry 78%">Counting down to our day</p>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:clamp(4px,3vw,10px);margin-top:clamp(14px,2vw,26px);animation:fu 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 18% entry 84%">
+          <div style="min-width:clamp(64px,10vw,124px);display:flex;flex-direction:column;align-items:center;gap:8px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.6vw,74px);line-height:1;color:#183C32;font-weight:500">{{ cd.d }}</span>
+            <span style="font-size:clamp(8px,.95vw,11px);letter-spacing:.3em;text-transform:uppercase;color:#8A8271">Days</span>
+          </div>
+          <span style="width:1px;height:clamp(38px,5vw,66px);background:linear-gradient(180deg,rgba(183,154,91,0),rgba(183,154,91,.8),rgba(183,154,91,0));margin-top:6px"></span>
+          <div style="min-width:clamp(64px,10vw,124px);display:flex;flex-direction:column;align-items:center;gap:8px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.6vw,74px);line-height:1;color:#183C32;font-weight:500">{{ cd.h }}</span>
+            <span style="font-size:clamp(8px,.95vw,11px);letter-spacing:.3em;text-transform:uppercase;color:#8A8271">Hours</span>
+          </div>
+          <span style="width:1px;height:clamp(38px,5vw,66px);background:linear-gradient(180deg,rgba(183,154,91,0),rgba(183,154,91,.8),rgba(183,154,91,0));margin-top:6px"></span>
+          <div style="min-width:clamp(64px,10vw,124px);display:flex;flex-direction:column;align-items:center;gap:8px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.6vw,74px);line-height:1;color:#183C32;font-weight:500">{{ cd.m }}</span>
+            <span style="font-size:clamp(8px,.95vw,11px);letter-spacing:.3em;text-transform:uppercase;color:#8A8271">Minutes</span>
+          </div>
+          <span style="width:1px;height:clamp(38px,5vw,66px);background:linear-gradient(180deg,rgba(183,154,91,0),rgba(183,154,91,.8),rgba(183,154,91,0));margin-top:6px"></span>
+          <div style="min-width:clamp(64px,10vw,124px);display:flex;flex-direction:column;align-items:center;gap:8px">
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5.6vw,74px);line-height:1;color:var(--gold);font-weight:500">{{ cd.s }}</span>
+            <span style="font-size:clamp(8px,.95vw,11px);letter-spacing:.3em;text-transform:uppercase;color:#8A8271">Seconds</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="couple" data-screen-label="03 Bride &amp; Groom" style="position:relative;overflow:hidden;background:#FAF1E3;padding:clamp(80px,10vw,150px) clamp(20px,5vw,64px) clamp(90px,11vw,160px)">
+      <div style="position:absolute;top:0;left:0;width:clamp(120px,22vw,330px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f3-tl.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * 1.3),0,0)" />
+      </div>
+      <div style="position:absolute;top:0;right:0;width:clamp(120px,22vw,330px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f3-tr.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * -1.3),0,0)" />
+      </div>
+      <div style="position:absolute;bottom:0;left:0;width:clamp(110px,20vw,300px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f3-bl.png" alt="" style="width:100%;opacity:var(--floral)" />
+      </div>
+      <div style="position:absolute;bottom:0;right:0;width:clamp(110px,20vw,300px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f3-br.png" alt="" style="width:100%;opacity:var(--floral)" />
+      </div>
+
+      <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <p style="margin:0;font-size:clamp(9px,1.05vw,12px);letter-spacing:.42em;text-transform:uppercase;color:#8A8271;font-weight:500;animation:fu 1.2s ease-out both;animation-timeline:view();animation-range:entry 3% entry 46%">The</p>
+        <h2 style="margin:clamp(8px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,5.4vw,68px);letter-spacing:.06em;color:#183C32;animation:br 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 4% entry 52%">BRIDE &amp; GROOM</h2>
+        <img src="art/orn-div.png" alt="" style="width:clamp(120px,16vw,220px);margin-top:clamp(10px,1.4vw,18px);animation:sc 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 6% entry 56%" />
+
+        <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:clamp(22px,4vw,70px);margin-top:clamp(40px,5vw,76px);width:100%">
+          <article style="flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;align-items:center;animation:fl 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 62%">
+            <img src="art/groom.png" alt="Portrait of Ahmed" style="width:clamp(190px,26vw,330px);animation:zin 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 70%" />
+            <h3 style="margin:clamp(18px,2.4vw,30px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(24px,3.2vw,42px);letter-spacing:.12em;color:#183C32">AHMED</h3>
+            <span style="display:block;width:44px;height:1px;margin:clamp(12px,1.6vw,18px) 0;background:var(--gold);opacity:.8"></span>
+            <p style="margin:0;max-width:300px;font-size:clamp(13px,1.35vw,16px);line-height:2;color:#5F6A60;text-wrap:pretty">A kind heart, a loving soul and the beginning of a beautiful journey.</p>
+          </article>
+
+          <div style="flex:0 0 auto;display:flex;flex-direction:column;align-items:center;align-self:center;padding:0 clamp(0px,1vw,12px)">
+            <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(46px,7vw,96px);line-height:1;color:var(--gold);animation:sc 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 10% entry 66%">&amp;</span>
+            <img src="art/stem.png" alt="" style="width:clamp(90px,12vw,170px);margin-top:8px;animation:fu 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 12% entry 76%" />
+          </div>
+
+          <article style="flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;align-items:center;animation:fr 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 62%">
+            <img src="art/bride.png" alt="Portrait of Aayesha" style="width:clamp(190px,26vw,330px);animation:zin 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 70%" />
+            <h3 style="margin:clamp(18px,2.4vw,30px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(24px,3.2vw,42px);letter-spacing:.12em;color:#183C32">AAYESHA</h3>
+            <span style="display:block;width:44px;height:1px;margin:clamp(12px,1.6vw,18px) 0;background:var(--gold);opacity:.8"></span>
+            <p style="margin:0;max-width:300px;font-size:clamp(13px,1.35vw,16px);line-height:2;color:#5F6A60;text-wrap:pretty">A gentle heart, a strong soul and the reason our journey feels so beautiful.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="story" data-screen-label="04 Our Story" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#FAF1E3,#F3EADA 55%,#FAF1E3);padding:clamp(80px,10vw,150px) clamp(20px,5vw,64px)">
+      <div style="position:absolute;top:0;left:0;width:clamp(110px,20vw,300px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f4-tl.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * 1.2),0,0)" />
+      </div>
+      <div style="position:absolute;bottom:0;right:0;width:clamp(120px,22vw,330px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f4-br.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * -1.2),0,0)" />
+      </div>
+
+      <div style="position:relative;z-index:2;max-width:980px;margin:0 auto">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,5.4vw,68px);letter-spacing:.08em;color:#183C32;animation:br 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 4% entry 50%">OUR STORY</h2>
+          <img src="art/orn-div.png" alt="" style="width:clamp(120px,16vw,210px);margin-top:clamp(10px,1.4vw,16px);animation:sc 1.4s ease-out both;animation-timeline:view();animation-range:entry 6% entry 54%" />
+          <p style="margin:clamp(18px,2.4vw,30px) 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.6vw,32px);line-height:1.6;color:#26352F;max-width:520px;text-wrap:pretty;animation:fu 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 60%">Two lives, two families,<br />one beautiful journey.</p>
+        </div>
+
+        <div style="position:relative;margin-top:clamp(46px,6vw,86px);padding-left:clamp(38px,6vw,72px);view-timeline-name:--story;view-timeline-axis:block">
+          <span style="position:absolute;left:clamp(11px,1.9vw,23px);top:6px;bottom:6px;width:1px;background:rgba(183,154,91,.22)"></span>
+          <span style="position:absolute;left:clamp(11px,1.9vw,23px);top:6px;bottom:6px;width:1px;background:linear-gradient(180deg,var(--gold),rgba(183,154,91,.45));transform-origin:top;animation:dy 1s linear both;animation-timeline:--story;animation-range:entry 55% exit 25%"></span>
+
+          <article style="position:relative;padding:0 0 clamp(34px,4.6vw,60px);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 6% entry 52%">
+            <span style="position:absolute;left:calc(clamp(38px,6vw,72px) * -1);top:9px;width:9px;height:9px;margin-left:clamp(7px,1.55vw,19px);border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(183,154,91,.14)"></span>
+            <p style="margin:0;font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">01 — First Meeting</p>
+            <h3 style="margin:10px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(23px,3.2vw,40px);letter-spacing:.02em;color:#183C32">Where it all began</h3>
+            <p style="margin:10px 0 0;max-width:520px;font-size:clamp(13px,1.35vw,16px);line-height:1.95;color:#5F6A60;text-wrap:pretty">A quiet introduction between two families — a conversation that felt, from the very first moment, like the beginning of something written long before us.</p>
+          </article>
+
+          <article style="position:relative;padding:0 0 clamp(34px,4.6vw,60px);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 10% entry 58%">
+            <span style="position:absolute;left:calc(clamp(38px,6vw,72px) * -1);top:9px;width:9px;height:9px;margin-left:clamp(7px,1.55vw,19px);border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(183,154,91,.14)"></span>
+            <p style="margin:0;font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">02 — The Beginning</p>
+            <h3 style="margin:10px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(23px,3.2vw,40px);letter-spacing:.02em;color:#183C32">A bond that grew</h3>
+            <p style="margin:10px 0 0;max-width:520px;font-size:clamp(13px,1.35vw,16px);line-height:1.95;color:#5F6A60;text-wrap:pretty">Long letters, longer duas, and the slow, patient discovery that respect and kindness are the truest foundations of love.</p>
+          </article>
+
+          <article style="position:relative;padding:0 0 clamp(34px,4.6vw,60px);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 14% entry 64%">
+            <span style="position:absolute;left:calc(clamp(38px,6vw,72px) * -1);top:9px;width:9px;height:9px;margin-left:clamp(7px,1.55vw,19px);border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(183,154,91,.14)"></span>
+            <p style="margin:0;font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">03 — The Journey</p>
+            <h3 style="margin:10px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(23px,3.2vw,40px);letter-spacing:.02em;color:#183C32">Through ups &amp; downs</h3>
+            <p style="margin:10px 0 0;max-width:520px;font-size:clamp(13px,1.35vw,16px);line-height:1.95;color:#5F6A60;text-wrap:pretty">Seasons of waiting and small victories, held together by two families who prayed for the same happy ending.</p>
+          </article>
+
+          <article style="position:relative;padding:0 0 clamp(34px,4.6vw,60px);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 18% entry 70%">
+            <span style="position:absolute;left:calc(clamp(38px,6vw,72px) * -1);top:9px;width:9px;height:9px;margin-left:clamp(7px,1.55vw,19px);border-radius:50%;background:var(--gold);box-shadow:0 0 0 5px rgba(183,154,91,.14)"></span>
+            <p style="margin:0;font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">04 — The Yes</p>
+            <h3 style="margin:10px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(23px,3.2vw,40px);letter-spacing:.02em;color:#183C32">A promise for life</h3>
+            <p style="margin:10px 0 0;max-width:520px;font-size:clamp(13px,1.35vw,16px);line-height:1.95;color:#5F6A60;text-wrap:pretty">One word, spoken with certainty in front of the people we love most — and a promise renewed every day since.</p>
+          </article>
+
+          <article style="position:relative;animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 22% entry 76%">
+            <span style="position:absolute;left:calc(clamp(38px,6vw,72px) * -1);top:9px;width:11px;height:11px;margin-left:clamp(6px,1.45vw,18px);border-radius:50%;background:#183C32;box-shadow:0 0 0 5px rgba(24,60,50,.12)"></span>
+            <p style="margin:0;font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">05 — The Wedding Day</p>
+            <h3 style="margin:10px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(23px,3.2vw,40px);letter-spacing:.02em;color:#183C32">The best day ever</h3>
+            <p style="margin:10px 0 0;max-width:520px;font-size:clamp(13px,1.35vw,16px);line-height:1.95;color:#5F6A60;text-wrap:pretty">The twelfth of December, two thousand and twenty-six — the day our two families become one, insha’Allah.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="events" data-screen-label="05 Wedding Events" style="position:relative;overflow:hidden;background:#FAF1E3;padding:clamp(80px,10vw,150px) clamp(20px,5vw,64px)">
+      <div style="position:absolute;top:0;left:0;width:clamp(110px,20vw,300px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f5-tl.png" alt="" style="width:100%;opacity:var(--floral)" />
+      </div>
+      <div style="position:absolute;bottom:0;right:0;width:clamp(120px,22vw,320px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f5-br.png" alt="" style="width:100%;opacity:var(--floral)" />
+      </div>
+
+      <div style="position:relative;z-index:2;max-width:1220px;margin:0 auto">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+          <p style="margin:0;font-size:clamp(9px,1.05vw,12px);letter-spacing:.42em;text-transform:uppercase;color:#8A8271;font-weight:500;animation:fu 1.2s ease-out both;animation-timeline:view();animation-range:entry 3% entry 46%">The</p>
+          <h2 style="margin:clamp(8px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,5.4vw,68px);letter-spacing:.06em;color:#183C32;animation:br 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 4% entry 52%">WEDDING EVENTS</h2>
+          <p style="margin:clamp(14px,1.8vw,22px) 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(16px,2vw,24px);color:#777267;max-width:520px;text-wrap:pretty;animation:fi 1.5s ease-out both;animation-timeline:view();animation-range:entry 6% entry 56%">Join us as we celebrate these beautiful moments together.</p>
+        </div>
+
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:clamp(18px,2.4vw,32px);margin-top:clamp(40px,5vw,74px)">
+          <article style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(30px,3.4vw,44px) clamp(16px,2vw,26px) clamp(26px,3vw,38px);background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(239,230,212,.42));border:1px solid rgba(183,154,91,.34);border-radius:130px 130px 8px 8px;box-shadow:0 26px 60px -46px rgba(24,60,50,.65);animation:fu 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 6% entry 56%">
+            <span style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;color:#8A8271;font-weight:600">01</span>
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6vw,78px);line-height:1;color:var(--gold);font-weight:500;animation:sc 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 60%">01</span>
+            <h3 style="margin:clamp(14px,1.8vw,22px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);letter-spacing:.14em;color:#183C32">MEHENDI</h3>
+            <span style="display:block;width:52px;height:1px;margin:clamp(12px,1.5vw,18px) 0;background:var(--gold);opacity:.7;transform-origin:center;animation:dx 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 10% entry 62%"></span>
+            <p style="margin:0;font-size:clamp(11px,1.2vw,13px);letter-spacing:.2em;text-transform:uppercase;color:#26352F;line-height:2.1">11 Dec 2026<br />07:00 PM</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">The Green Palace</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-size:clamp(12px,1.25vw,14px);line-height:1.9;color:#777267;text-wrap:pretty">An evening of henna, laughter and music with the women of both families.</p>
+          </article>
+
+          <article style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(30px,3.4vw,44px) clamp(16px,2vw,26px) clamp(26px,3vw,38px);background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(239,230,212,.42));border:1px solid rgba(183,154,91,.34);border-radius:130px 130px 8px 8px;box-shadow:0 26px 60px -46px rgba(24,60,50,.65);animation:fu 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 9% entry 60%">
+            <span style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;color:#8A8271;font-weight:600">02</span>
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6vw,78px);line-height:1;color:var(--gold);font-weight:500;animation:sc 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 11% entry 64%">02</span>
+            <h3 style="margin:clamp(14px,1.8vw,22px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);letter-spacing:.14em;color:#183C32">NIKAH</h3>
+            <span style="display:block;width:52px;height:1px;margin:clamp(12px,1.5vw,18px) 0;background:var(--gold);opacity:.7;transform-origin:center;animation:dx 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 13% entry 66%"></span>
+            <p style="margin:0;font-size:clamp(11px,1.2vw,13px);letter-spacing:.2em;text-transform:uppercase;color:#26352F;line-height:2.1">12 Dec 2026<br />12:00 PM</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">The Green Palace</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-size:clamp(12px,1.25vw,14px);line-height:1.9;color:#777267;text-wrap:pretty">The sacred ceremony, followed by lunch and duas for the couple.</p>
+          </article>
+
+          <article style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(30px,3.4vw,44px) clamp(16px,2vw,26px) clamp(26px,3vw,38px);background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(239,230,212,.42));border:1px solid rgba(183,154,91,.34);border-radius:130px 130px 8px 8px;box-shadow:0 26px 60px -46px rgba(24,60,50,.65);animation:fu 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 12% entry 64%">
+            <span style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;color:#8A8271;font-weight:600">03</span>
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6vw,78px);line-height:1;color:var(--gold);font-weight:500;animation:sc 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 14% entry 68%">03</span>
+            <h3 style="margin:clamp(14px,1.8vw,22px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);letter-spacing:.14em;color:#183C32">RECEPTION</h3>
+            <span style="display:block;width:52px;height:1px;margin:clamp(12px,1.5vw,18px) 0;background:var(--gold);opacity:.7;transform-origin:center;animation:dx 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 16% entry 70%"></span>
+            <p style="margin:0;font-size:clamp(11px,1.2vw,13px);letter-spacing:.2em;text-transform:uppercase;color:#26352F;line-height:2.1">12 Dec 2026<br />07:30 PM</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">The Grand Hall</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-size:clamp(12px,1.25vw,14px);line-height:1.9;color:#777267;text-wrap:pretty">A candlelit dinner to celebrate with family, friends and neighbours.</p>
+          </article>
+
+          <article style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(30px,3.4vw,44px) clamp(16px,2vw,26px) clamp(26px,3vw,38px);background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(239,230,212,.42));border:1px solid rgba(183,154,91,.34);border-radius:130px 130px 8px 8px;box-shadow:0 26px 60px -46px rgba(24,60,50,.65);animation:fu 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 15% entry 68%">
+            <span style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;color:#8A8271;font-weight:600">04</span>
+            <span style="font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6vw,78px);line-height:1;color:var(--gold);font-weight:500;animation:sc 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 17% entry 72%">04</span>
+            <h3 style="margin:clamp(14px,1.8vw,22px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);letter-spacing:.14em;color:#183C32">WALIMA</h3>
+            <span style="display:block;width:52px;height:1px;margin:clamp(12px,1.5vw,18px) 0;background:var(--gold);opacity:.7;transform-origin:center;animation:dx 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 19% entry 74%"></span>
+            <p style="margin:0;font-size:clamp(11px,1.2vw,13px);letter-spacing:.2em;text-transform:uppercase;color:#26352F;line-height:2.1">13 Dec 2026<br />07:00 PM</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">The Grand Hall</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-size:clamp(12px,1.25vw,14px);line-height:1.9;color:#777267;text-wrap:pretty">The wedding feast, hosted with gratitude by the groom’s family.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="details" data-screen-label="06 The Celebration" style="position:relative;overflow:hidden;background:linear-gradient(180deg,#FAF1E3,#EFE6D4);padding:clamp(80px,10vw,150px) clamp(20px,5vw,64px)">
+      <div style="position:relative;z-index:2;max-width:1180px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:clamp(30px,5vw,74px)">
+        <div style="flex:1 1 320px;min-width:280px;position:relative;aspect-ratio:4/5;max-height:600px;border-radius:190px 190px 10px 10px;overflow:hidden;border:1px solid rgba(183,154,91,.45);box-shadow:0 40px 90px -60px rgba(24,60,50,.8);animation:sc 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 5% entry 60%">
+          <image-slot id="venue" shape="rect" placeholder="Drop the venue photograph" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+        </div>
+
+        <div style="flex:1 1 340px;min-width:280px">
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,5vw,64px);letter-spacing:.06em;color:#183C32;animation:br 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 6% entry 54%">THE CELEBRATION</h2>
+          <span style="display:block;width:74px;height:1px;margin:clamp(18px,2.2vw,26px) 0;background:var(--gold);transform-origin:left;animation:dx 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 56%"></span>
+
+          <dl style="margin:0;display:grid;gap:clamp(18px,2.4vw,30px)">
+            <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 9% entry 60%">
+              <dt style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">Date</dt>
+              <dd style="margin:8px 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);color:#183C32">12 December 2026<span style="display:block;margin-top:4px;font-family:'Manrope',sans-serif;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#8A8271">Saturday</span></dd>
+            </div>
+            <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 12% entry 64%">
+              <dt style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">Time</dt>
+              <dd style="margin:8px 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);color:#183C32">07:30 PM<span style="display:block;margin-top:4px;font-family:'Manrope',sans-serif;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#8A8271">Onwards</span></dd>
+            </div>
+            <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 15% entry 68%">
+              <dt style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">Venue</dt>
+              <dd style="margin:8px 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);color:#183C32">The Grand Hall<span style="display:block;margin-top:6px;font-family:'Manrope',sans-serif;font-size:clamp(12px,1.3vw,15px);letter-spacing:.02em;text-transform:none;color:#777267;line-height:1.8">123, Palace Road,<br />Bangalore, Karnataka</span></dd>
+            </div>
+            <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 18% entry 72%">
+              <dt style="font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">Dress Code</dt>
+              <dd style="margin:8px 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,34px);color:#183C32">Elegant Traditional</dd>
+            </div>
+          </dl>
+
+          <p style="margin:clamp(22px,3vw,34px) 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,2.1vw,25px);color:#5F6A60;animation:fi 1.4s ease-out both;animation-timeline:view();animation-range:entry 20% entry 74%">We can’t wait to celebrate with you!</p>
+
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Palace+Road+Bangalore+Karnataka" target="_blank" rel="noopener" style="margin-top:clamp(22px,3vw,32px);display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:16px 30px;border-radius:4px;background:#183C32;color:#F8F4EA;font-size:clamp(10px,1.1vw,12px);letter-spacing:.28em;text-transform:uppercase;font-weight:500;box-shadow:0 18px 44px -26px rgba(24,60,50,.9);transition:background .45s ease,transform .45s cubic-bezier(.22,1,.36,1);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 22% entry 76%" style-hover="background:#26352F;color:#F8F4EA;transform:translateY(-2px)">
+            <span style="width:9px;height:9px;border:1px solid rgba(217,196,143,.9);border-radius:50% 50% 50% 0;transform:rotate(-45deg)"></span>
+            <span>View Location</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="memories" data-screen-label="07 Our Memories" style="position:relative;overflow:hidden;background:#EFE6D4;padding:clamp(80px,10vw,150px) clamp(20px,5vw,64px)">
+      <div style="position:relative;z-index:2;max-width:1220px;margin:0 auto">
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center">
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(30px,5.4vw,64px);letter-spacing:.07em;color:#183C32;animation:br 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 4% entry 50%">OUR MEMORIES</h2>
+          <img src="art/orn-div.png" alt="" style="width:clamp(120px,16vw,200px);margin-top:clamp(10px,1.4vw,16px);opacity:.9;animation:sc 1.3s ease-out both;animation-timeline:view();animation-range:entry 6% entry 54%" />
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;gap:clamp(12px,1.6vw,22px);margin-top:clamp(36px,4.6vw,66px)">
+          <div style="position:relative;flex:2 1 320px;aspect-ratio:4/5;border-radius:10px;overflow:hidden;border:1px solid rgba(183,154,91,.4);box-shadow:0 26px 60px -46px rgba(24,60,50,.7);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 5% entry 55%">
+            <image-slot id="mem1" shape="rect" placeholder="Couple portrait" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+          </div>
+          <div style="flex:1 1 240px;display:flex;flex-direction:column;gap:clamp(12px,1.6vw,22px)">
+            <div style="position:relative;flex:1 1 0;min-height:150px;border-radius:10px;overflow:hidden;border:1px solid rgba(183,154,91,.4);box-shadow:0 26px 60px -46px rgba(24,60,50,.7);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 58%">
+              <image-slot id="mem2" shape="rect" placeholder="Engagement moment" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+            </div>
+            <div style="position:relative;flex:1 1 0;min-height:150px;border-radius:10px;overflow:hidden;border:1px solid rgba(183,154,91,.4);box-shadow:0 26px 60px -46px rgba(24,60,50,.7);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 10% entry 60%">
+              <image-slot id="mem3" shape="rect" placeholder="Mehendi evening" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+            </div>
+          </div>
+          <div style="flex:1 1 220px;display:flex;flex-direction:column;justify-content:center;text-align:center;min-height:170px;padding:clamp(20px,2.4vw,32px);background:rgba(250,241,227,.72);border:1px solid rgba(183,154,91,.3);border-radius:10px;animation:fi 1.4s ease-out both;animation-timeline:view();animation-range:entry 12% entry 62%">
+            <p style="margin:0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(18px,2vw,26px);line-height:1.65;color:#183C32;text-wrap:pretty">Every moment with you is my favorite memory.</p>
+            <span style="display:block;width:34px;height:1px;margin:clamp(14px,1.8vw,20px) auto 0;background:var(--gold)"></span>
+          </div>
+          <div style="position:relative;flex:3 1 340px;aspect-ratio:16/7;max-height:480px;border-radius:10px;overflow:hidden;border:1px solid rgba(183,154,91,.4);box-shadow:0 26px 60px -46px rgba(24,60,50,.7);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 14% entry 64%">
+            <image-slot id="mem4" shape="rect" placeholder="Favourite photograph of the two of you" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dua" data-screen-label="08 Dua" style="position:relative;overflow:hidden;background:#071C10;padding:clamp(90px,11vw,170px) clamp(20px,5vw,64px)">
+      <div style="position:absolute;top:0;left:0;width:clamp(130px,24vw,360px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/g-tl.png" alt="" style="width:100%;transform:translate3d(calc(var(--px) * 1.1),0,0)" />
+      </div>
+      <div style="position:absolute;top:0;right:0;width:clamp(130px,24vw,360px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/g-tr.png" alt="" style="width:100%;transform:translate3d(calc(var(--px) * -1.1),0,0)" />
+      </div>
+      <div style="position:absolute;bottom:0;left:0;width:clamp(120px,22vw,330px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/g-bl.png" alt="" style="width:100%" />
+      </div>
+      <div style="position:absolute;bottom:0;right:0;width:clamp(120px,22vw,330px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/g-br.png" alt="" style="width:100%" />
+      </div>
+
+      <div style="position:relative;z-index:2;max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <img src="art/star-g.png" alt="" style="width:clamp(32px,3.6vw,50px);animation:sc 2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 3% entry 48%" />
+        <h2 style="margin:clamp(14px,2vw,24px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(26px,4vw,50px);letter-spacing:.3em;color:#F3EADA;animation:fi 2.4s ease-out both;animation-timeline:view();animation-range:entry 5% entry 55%">DUA</h2>
+
+        <div style="position:relative;width:100%;margin-top:clamp(28px,4vw,52px);padding:clamp(34px,5vw,76px) clamp(20px,4vw,64px);border:1px solid rgba(183,154,91,.55);border-radius:clamp(60px,10vw,150px) clamp(60px,10vw,150px) clamp(60px,10vw,150px) clamp(60px,10vw,150px)/clamp(40px,6vw,90px) clamp(40px,6vw,90px) clamp(40px,6vw,90px) clamp(40px,6vw,90px);box-shadow:0 0 0 8px rgba(7,28,16,.5),0 0 0 9px rgba(183,154,91,.22);animation:sc 2.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 6% entry 62%">
+          <p style="margin:0;font-family:'Amiri',serif;font-size:clamp(24px,4.2vw,52px);line-height:2.1;color:#E8CE96;direction:rtl;text-wrap:balance;animation:fi 3s ease-out both;animation-timeline:view();animation-range:entry 10% entry 72%">بَارَكَ اللَّهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+          <p style="margin:clamp(24px,3.4vw,42px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,2.1vw,26px);line-height:2;color:#EDE4D5;text-wrap:pretty;animation:fu 2.6s ease-out both;animation-timeline:view();animation-range:entry 14% entry 78%">May Allah bless you both,<br />bless your union,<br />and bring you together in goodness.</p>
+          <span style="display:block;width:min(320px,70%);height:1px;margin:clamp(24px,3.4vw,40px) auto;background:linear-gradient(90deg,rgba(183,154,91,0),rgba(183,154,91,.75),rgba(183,154,91,0));transform-origin:center;animation:dx 2.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 16% entry 80%"></span>
+          <p style="margin:0;font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.6vw,32px);letter-spacing:.4em;color:var(--gold);animation:fi 3s ease-out both;animation-timeline:view();animation-range:entry 18% entry 86%">AMEEN</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="invite" data-screen-label="09 Final Invitation" style="position:relative;overflow:hidden;background:#FAF1E3;padding:clamp(90px,11vw,170px) clamp(20px,5vw,64px) clamp(60px,7vw,100px)">
+      <div style="position:absolute;top:0;left:0;width:clamp(140px,25vw,380px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f7-tl.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * 1.5),0,0)" />
+      </div>
+      <div style="position:absolute;top:0;right:0;width:clamp(140px,25vw,380px);pointer-events:none;animation:pl 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f7-tr.png" alt="" style="width:100%;opacity:var(--floral);transform:translate3d(calc(var(--px) * -1.5),0,0)" />
+      </div>
+      <div style="position:absolute;bottom:0;left:0;width:clamp(140px,25vw,380px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f7-bl.png" alt="" style="width:100%;opacity:var(--floral)" />
+      </div>
+      <div style="position:absolute;bottom:0;right:0;width:clamp(140px,25vw,380px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/f7-br.png" alt="" style="width:100%;opacity:var(--floral)" />
+      </div>
+
+      <div style="position:relative;z-index:2;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <img src="art/star.png" alt="" style="width:clamp(32px,3.6vw,52px);animation:sc 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 3% entry 46%" />
+        <p style="margin:clamp(16px,2vw,24px) 0 0;font-size:clamp(9px,1.05vw,12px);letter-spacing:.4em;text-transform:uppercase;color:#8A8271;font-weight:500;animation:fu 1.3s ease-out both;animation-timeline:view();animation-range:entry 4% entry 50%">Together with the blessings of</p>
+        <p style="margin:8px 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(22px,3vw,38px);color:var(--gold);animation:fu 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 5% entry 54%">Allah &amp; Our Families</p>
+        <p style="margin:clamp(18px,2.4vw,30px) 0 0;font-size:clamp(10px,1.15vw,13px);letter-spacing:.34em;text-transform:uppercase;color:#26352F;animation:fi 1.4s ease-out both;animation-timeline:view();animation-range:entry 7% entry 58%">We joyfully invite you to the wedding of</p>
+
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(14px,3vw,52px);margin-top:clamp(24px,3.4vw,46px)">
+          <div style="animation:fl 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 64%">
+            <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,6.4vw,88px);line-height:1;letter-spacing:.05em;color:#183C32">AHMED</h2>
+            <p style="margin:clamp(10px,1.4vw,16px) 0 0;font-size:clamp(9px,1vw,11px);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600">Son of</p>
+            <p style="margin:6px 0 0;font-size:clamp(11px,1.2vw,14px);letter-spacing:.06em;color:#5F6A60">Mr. Faisal Ahmed &amp; Mrs. Naseema</p>
+          </div>
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(40px,6vw,84px);line-height:1;color:var(--gold);animation:sc 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 10% entry 66%">&amp;</span>
+          <div style="animation:fr 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 64%">
+            <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(34px,6.4vw,88px);line-height:1;letter-spacing:.05em;color:#183C32">AAYESHA</h2>
+            <p style="margin:clamp(10px,1.4vw,16px) 0 0;font-size:clamp(9px,1vw,11px);letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600">Daughter of</p>
+            <p style="margin:6px 0 0;font-size:clamp(11px,1.2vw,14px);letter-spacing:.06em;color:#5F6A60">Mr. Imran Khan &amp; Mrs. Sajida</p>
+          </div>
+        </div>
+
+        <img src="art/orn-div.png" alt="" style="width:clamp(130px,17vw,230px);margin-top:clamp(26px,3.4vw,44px);animation:sc 1.4s ease-out both;animation-timeline:view();animation-range:entry 12% entry 70%" />
+
+        <p style="margin:clamp(20px,2.6vw,32px) 0 0;max-width:640px;font-family:'Cormorant Garamond',serif;font-size:clamp(17px,2.1vw,26px);line-height:1.9;color:#26352F;text-wrap:pretty;animation:fu 1.5s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 14% entry 74%">Your presence will make our celebration even more special. We would be honored to have you with us as we begin our new journey together.</p>
+        <p style="margin:clamp(14px,1.8vw,22px) 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.4vw,30px);color:var(--gold);animation:fi 1.6s ease-out both;animation-timeline:view();animation-range:entry 16% entry 78%">Please keep us in your prayers.</p>
+
+        <div style="width:100%;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(22px,3vw,40px);margin-top:clamp(46px,6vw,84px);padding-top:clamp(34px,4vw,52px);border-top:1px solid rgba(183,154,91,.3);text-align:center">
+          <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 18% entry 74%">
+            <h3 style="margin:0;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#183C32;font-weight:600">With love &amp; blessings from</h3>
+            <p style="margin:clamp(14px,1.8vw,20px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(17px,2vw,24px);line-height:1.9;color:#26352F">The Khan Family<br /><span style="font-style:italic;color:var(--gold);font-size:.8em">and</span><br />The Siddiqui Family</p>
+          </div>
+          <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 20% entry 76%">
+            <h3 style="margin:0;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#183C32;font-weight:600">Best wishes</h3>
+            <p style="margin:clamp(14px,1.8vw,20px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.9vw,22px);line-height:2;color:#5F6A60">Uncle &amp; Aunty<br />Sara &amp; Ali<br />Hamza &amp; Aisha</p>
+          </div>
+          <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 22% entry 78%">
+            <h3 style="margin:0;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#183C32;font-weight:600">For details</h3>
+            <p style="margin:clamp(14px,1.8vw,20px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.9vw,22px);line-height:1.7;color:#26352F">Faisal Ahmed<br /><a href="tel:+919876543210" style="font-family:'Manrope',sans-serif;font-size:.62em;letter-spacing:.14em;color:var(--gold)">+91 98765 43210</a></p>
+            <p style="margin:clamp(10px,1.4vw,16px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.9vw,22px);line-height:1.7;color:#26352F">Imran Khan<br /><a href="tel:+919876543211" style="font-family:'Manrope',sans-serif;font-size:.62em;letter-spacing:.14em;color:var(--gold)">+91 98765 43211</a></p>
+          </div>
+          <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 24% entry 80%">
+            <h3 style="margin:0;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#183C32;font-weight:600">Kindly RSVP</h3>
+            <p style="margin:clamp(14px,1.8vw,20px) 0 0;font-size:clamp(12px,1.3vw,15px);line-height:1.9;color:#777267;text-wrap:pretty">Your presence would mean the world to us. Please confirm before 30 November.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(12px,1.8vw,20px);margin-top:clamp(40px,5vw,68px)">
+          <a href="https://wa.me/919876543210?text=We%20will%20be%20there%20insha%27Allah" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:17px clamp(24px,3vw,38px);border-radius:4px;background:#183C32;color:#F8F4EA;font-size:clamp(10px,1.1vw,12px);letter-spacing:.28em;text-transform:uppercase;font-weight:500;box-shadow:0 20px 46px -26px rgba(24,60,50,.9);transition:background .45s ease,transform .45s cubic-bezier(.22,1,.36,1);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 26% entry 82%" style-hover="background:#26352F;color:#F8F4EA;transform:translateY(-2px)">Confirm your presence</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query=Palace+Road+Bangalore+Karnataka" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:17px clamp(24px,3vw,38px);border-radius:4px;background:rgba(255,255,255,.5);border:1px solid rgba(183,154,91,.7);color:#183C32;font-size:clamp(10px,1.1vw,12px);letter-spacing:.28em;text-transform:uppercase;font-weight:500;transition:background .45s ease,transform .45s cubic-bezier(.22,1,.36,1);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 28% entry 84%" style-hover="background:#fff;color:#183C32;transform:translateY(-2px)">View location</a>
+        </div>
+      </div>
+    </section>
+
+    <footer data-screen-label="10 Footer" style="position:relative;overflow:hidden;background:#071C10;padding:clamp(70px,9vw,130px) clamp(20px,5vw,64px) clamp(130px,15vw,180px)">
+      <div style="position:absolute;top:0;left:0;width:clamp(120px,22vw,320px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/g-bl.png" alt="" style="width:100%;transform:scaleY(-1)" />
+      </div>
+      <div style="position:absolute;top:0;right:0;width:clamp(120px,22vw,320px);pointer-events:none;animation:plr 1s linear both;animation-timeline:view();animation-range:cover 0% cover 100%">
+        <img src="art/g-br.png" alt="" style="width:100%;transform:scaleY(-1)" />
+      </div>
+
+      <div style="position:relative;z-index:2;max-width:820px;margin:0 auto;display:flex;flex-direction:column;align-items:center;text-align:center">
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:clamp(12px,2.4vw,34px)">
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,5vw,64px);letter-spacing:.08em;color:#F3EADA;animation:fl 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 4% entry 60%">AHMED</h2>
+          <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(26px,4.4vw,56px);color:var(--gold);animation:sc 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 64%">&amp;</span>
+          <h2 style="margin:0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(28px,5vw,64px);letter-spacing:.08em;color:#F3EADA;animation:fr 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 4% entry 60%">AAYESHA</h2>
+        </div>
+        <p style="margin:clamp(16px,2.2vw,26px) 0 0;font-size:clamp(10px,1.15vw,13px);letter-spacing:.36em;text-transform:uppercase;color:rgba(243,234,218,.8);animation:fu 1.6s ease-out both;animation-timeline:view();animation-range:entry 10% entry 68%">12 December 2026</p>
+        <img src="art/star-g.png" alt="" style="width:clamp(30px,3.4vw,46px);margin-top:clamp(22px,3vw,38px);animation:sc 2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 12% entry 72%" />
+        <p style="margin:clamp(20px,2.6vw,32px) 0 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(19px,2.4vw,30px);color:#E8CE96;animation:fi 2.2s ease-out both;animation-timeline:view();animation-range:entry 14% entry 78%">With love, gratitude &amp; duas.</p>
+        <span style="display:block;width:min(300px,60%);height:1px;margin:clamp(24px,3.2vw,40px) 0;background:linear-gradient(90deg,rgba(183,154,91,0),rgba(183,154,91,.6),rgba(183,154,91,0));transform-origin:center;animation:dx 2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 16% entry 80%"></span>
+        <p style="margin:0;font-size:clamp(10px,1.15vw,13px);letter-spacing:.3em;text-transform:uppercase;color:rgba(243,234,218,.7);animation:fi 2.4s ease-out both;animation-timeline:view();animation-range:entry 18% entry 88%">Thank you for being part of our journey</p>
+      </div>
+    </footer>
+  </main>
+
+  <div style="position:fixed;left:50%;bottom:max(16px,env(safe-area-inset-bottom));transform:translateX(-50%);z-index:60;width:min(calc(100% - 32px),490px);transition:opacity .6s ease;opacity:{{ navOp }}">
+    <nav aria-label="Invitation sections" style="position:relative;display:grid;grid-template-columns:repeat(5,1fr);align-items:center;padding:8px;background:rgba(250,241,227,.82);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border:1px solid rgba(183,154,91,.5);border-radius:999px;box-shadow:0 18px 44px -26px rgba(24,60,50,.55),0 1px 0 rgba(255,255,255,.7) inset">
+      <a href="#home" onClick="{{ nav.home.go }}" aria-label="Home" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;min-height:44px;padding:7px 4px 6px;border-radius:999px;transition:color .4s ease;color:{{ nav.home.c }}">
+        <span style="position:absolute;inset:0;border-radius:999px;background:rgba(183,154,91,.16);transition:opacity .45s ease;opacity:{{ nav.home.o }}"></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" style="position:relative"><path d="M4 11 12 4l8 7" /><rect x="6.5" y="11" width="11" height="9" rx="1.5" /></svg>
+        <span style="position:relative;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:600">Home</span>
+      </a>
+      <a href="#couple" onClick="{{ nav.couple.go }}" aria-label="Bride and groom" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;min-height:44px;padding:7px 4px 6px;border-radius:999px;transition:color .4s ease;color:{{ nav.couple.c }}">
+        <span style="position:absolute;inset:0;border-radius:999px;background:rgba(183,154,91,.16);transition:opacity .45s ease;opacity:{{ nav.couple.o }}"></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" style="position:relative"><circle cx="9.5" cy="12" r="5.2" /><circle cx="14.5" cy="12" r="5.2" /></svg>
+        <span style="position:relative;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:600">Couple</span>
+      </a>
+      <a href="#story" onClick="{{ nav.story.go }}" aria-label="Our story" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;min-height:44px;padding:7px 4px 6px;border-radius:999px;transition:color .4s ease;color:{{ nav.story.c }}">
+        <span style="position:absolute;inset:0;border-radius:999px;background:rgba(183,154,91,.16);transition:opacity .45s ease;opacity:{{ nav.story.o }}"></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" style="position:relative"><rect x="4" y="5" width="16" height="14" rx="1.5" /><path d="M12 5v14" /></svg>
+        <span style="position:relative;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:600">Story</span>
+      </a>
+      <a href="#events" onClick="{{ nav.events.go }}" aria-label="Wedding events" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;min-height:44px;padding:7px 4px 6px;border-radius:999px;transition:color .4s ease;color:{{ nav.events.c }}">
+        <span style="position:absolute;inset:0;border-radius:999px;background:rgba(183,154,91,.16);transition:opacity .45s ease;opacity:{{ nav.events.o }}"></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" style="position:relative"><rect x="4" y="6" width="16" height="14" rx="2" /><path d="M4 10h16M9 4v4M15 4v4" /></svg>
+        <span style="position:relative;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:600">Events</span>
+      </a>
+      <a href="#dua" onClick="{{ nav.dua.go }}" aria-label="Dua" style="position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;min-height:44px;padding:7px 4px 6px;border-radius:999px;transition:color .4s ease;color:{{ nav.dua.c }}">
+        <span style="position:absolute;inset:0;border-radius:999px;background:rgba(183,154,91,.16);transition:opacity .45s ease;opacity:{{ nav.dua.o }}"></span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true" style="position:relative"><path d="M16.5 4.6a8 8 0 1 0 3 10.9A6.6 6.6 0 0 1 16.5 4.6Z" /></svg>
+        <span style="position:relative;font-size:9px;letter-spacing:.18em;text-transform:uppercase;font-weight:600">Dua</span>
+      </a>
+    </nav>
+  </div>
+
+  <button type="button" onClick="{{ toggleMusic }}" aria-label="Toggle background music" style="position:fixed;right:max(16px,env(safe-area-inset-right));bottom:calc(max(16px,env(safe-area-inset-bottom)) + 84px);z-index:61;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;width:52px;height:52px;border-radius:50%;background:rgba(250,241,227,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(183,154,91,.5);box-shadow:0 14px 34px -22px rgba(24,60,50,.6);cursor:pointer;color:{{ musicColor }};transition:opacity .6s ease,color .4s ease;opacity:{{ navOp }}">
+    <span style="font-size:15px;line-height:1;animation:sp 9s linear infinite;animation-play-state:{{ musicRun }}">♪</span>
+    <span style="font-size:7px;letter-spacing:.14em;text-transform:uppercase;font-weight:600">{{ musicLabel }}</span>
+  </button>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;weddingISO&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026-12-12T19:30:00+05:30&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Wedding&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B79A5B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#B79A5B&quot;,&quot;#A98545&quot;,&quot;#8C7B4F&quot;,&quot;#C0A97A&quot;],&quot;section&quot;:&quot;Style&quot;},&quot;floral&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Lush&quot;,&quot;Balanced&quot;,&quot;Minimal&quot;],&quot;default&quot;:&quot;Lush&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Style&quot;},&quot;skipCover&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;music&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
+class Component extends DCLogic {
+  rootRef = React.createRef();
+  state = { opened: false, cd: { d: '—', h: '—', m: '—', s: '—' }, active: 'home', veil: 0, music: false, dim: false, progress: 0 };
+
+  findScroller() {
+    const cands = [document.scrollingElement, document.body, document.documentElement];
+    for (const c of cands) if (c && c.scrollHeight > c.clientHeight + 4) return c;
+    let n = this.rootRef.current;
+    while (n) {
+      const s = getComputedStyle(n);
+      if (/(auto|scroll)/.test(s.overflowY) && n.scrollHeight > n.clientHeight + 4) return n;
+      n = n.parentElement;
+    }
+    return document.scrollingElement || document.body;
+  }
+
+  offsetIn(el, scroller) {
+    let t = 0, n = el;
+    while (n && n !== scroller && n !== document.body && n !== document.documentElement) { t += n.offsetTop; n = n.offsetParent; }
+    return t;
+  }
+
+  componentDidMount() {
+    const skip = this.props.skipCover === true;
+    this.scroller = this.findScroller();
+    if (skip) this.setState({ opened: true });
+    else this.scroller.style.overflow = 'hidden';
+    this.applyVars();
+    this.tick();
+    this.timer = setInterval(() => this.tick(), 1000);
+    this.onScroll = () => {
+      const sc = this.scroller;
+      const max = sc.scrollHeight - sc.clientHeight;
+      const p = max > 0 ? Math.min(100, Math.max(0, (sc.scrollTop / max) * 100)) : 0;
+      const ids = ['home', 'couple', 'story', 'events', 'details', 'memories', 'dua', 'invite'];
+      let active = this.state.active;
+      const probe = window.innerHeight * 0.42;
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const r = el.getBoundingClientRect();
+        if (r.top <= probe && r.bottom > probe) { active = (id === 'details' || id === 'memories') ? 'events' : (id === 'invite' ? 'dua' : id); break; }
+      }
+      if (Math.abs(p - this.state.progress) > 0.4 || active !== this.state.active) this.setState({ progress: p, active: active });
+      this.wake();
+    };
+    this.onMove = (e) => {
+      const r = document.documentElement;
+      r.style.setProperty('--px', ((e.clientX / window.innerWidth - 0.5) * 16).toFixed(2) + 'px');
+      r.style.setProperty('--py', ((e.clientY / window.innerHeight - 0.5) * 12).toFixed(2) + 'px');
+      this.wake();
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true, capture: true });
+    this.scroller.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('pointermove', this.onMove, { passive: true });
+    window.addEventListener('pointerdown', this.onScroll, { passive: true });
+    this.wake();
+  }
+
+  componentDidUpdate() { this.applyVars(); }
+
+  applyVars() {
+    const el = this.rootRef.current;
+    const gold = this.props.accent || '#B79A5B';
+    const f = { Lush: '1', Balanced: '0.86', Minimal: '0.6' }[this.props.floral || 'Lush'] || '1';
+    if (el) { el.style.setProperty('--gold', gold); el.style.setProperty('--floral', f); }
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer); clearTimeout(this.idleT);
+    window.removeEventListener('scroll', this.onScroll, { capture: true });
+    if (this.scroller) { this.scroller.removeEventListener('scroll', this.onScroll); this.scroller.style.overflow = ''; }
+    window.removeEventListener('pointermove', this.onMove);
+    window.removeEventListener('pointerdown', this.onScroll);
+    this.stopMusic();
+  }
+
+  wake() {
+    if (this.state.dim) this.setState({ dim: false });
+    clearTimeout(this.idleT);
+    this.idleT = setTimeout(() => this.setState({ dim: true }), 2600);
+  }
+
+  tick() {
+    const iso = this.props.weddingISO || '2026-12-12T19:30:00+05:30';
+    const target = new Date(iso).getTime();
+    let diff = Math.max(0, target - Date.now());
+    const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+    const h = Math.floor(diff / 36e5); diff -= h * 36e5;
+    const m = Math.floor(diff / 6e4); diff -= m * 6e4;
+    const s = Math.floor(diff / 1000);
+    const p = (n) => String(n).padStart(2, '0');
+    this.setState({ cd: { d: String(d), h: p(h), m: p(m), s: p(s) } });
+  }
+
+  open = () => {
+    if (this.state.opened) return;
+    this.scroller.style.overflow = '';
+    this.scroller.scrollTop = 0;
+    this.setState({ opened: true });
+    if (this.props.music !== false) this.startMusic();
+  };
+
+  go = (id) => (e) => {
+    if (e) e.preventDefault();
+    const el = document.getElementById(id);
+    if (!el) return;
+    this.setState({ veil: 0.92 });
+    setTimeout(() => {
+      this.scroller.scrollTop = Math.max(0, this.offsetIn(el, this.scroller) - 6);
+      this.setState({ active: id });
+    }, 420);
+    setTimeout(() => this.setState({ veil: 0 }), 620);
+  };
+
+  startMusic() {
+    if (this.ctx) return;
+    try {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      const ctx = new AC();
+      const master = ctx.createGain();
+      master.gain.value = 0;
+      master.connect(ctx.destination);
+      master.gain.linearRampToValueAtTime(0.055, ctx.currentTime + 4);
+      const drone = ctx.createOscillator();
+      const dg = ctx.createGain();
+      drone.type = 'sine'; drone.frequency.value = 110; dg.gain.value = 0.35;
+      drone.connect(dg); dg.connect(master); drone.start();
+      const scale = [329.63, 392.0, 440.0, 493.88, 587.33, 659.25];
+      let i = 0;
+      const pluck = () => {
+        if (!this.ctx) return;
+        const o = ctx.createOscillator(); const g = ctx.createGain();
+        o.type = 'triangle';
+        o.frequency.value = scale[i % scale.length] / (i % 4 === 0 ? 2 : 1);
+        i += 1 + (Math.random() > 0.6 ? 1 : 0);
+        const t = ctx.currentTime;
+        g.gain.setValueAtTime(0, t);
+        g.gain.linearRampToValueAtTime(0.22, t + 1.1);
+        g.gain.exponentialRampToValueAtTime(0.0008, t + 5.5);
+        o.connect(g); g.connect(master); o.start(t); o.stop(t + 6);
+      };
+      pluck();
+      this.beat = setInterval(pluck, 2600);
+      this.ctx = ctx; this.master = master; this.drone = drone;
+      this.setState({ music: true });
+    } catch (err) { /* audio unavailable */ }
+  }
+
+  stopMusic() {
+    clearInterval(this.beat);
+    if (this.ctx) {
+      try { this.master.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 0.8); } catch (e) {}
+      const ctx = this.ctx; this.ctx = null;
+      setTimeout(() => { try { ctx.close(); } catch (e) {} }, 900);
+    }
+    this.setState({ music: false });
+  }
+
+  toggleMusic = () => { this.state.music ? this.stopMusic() : this.startMusic(); };
+
+  renderVals() {
+    const on = this.state.opened;
+    const item = (id) => {
+      const a = this.state.active === id;
+      return { c: a ? (this.props.accent || '#B79A5B') : '#5F6A60', o: a ? 1 : 0, go: this.go(id) };
+    };
+    return {
+      rootRef: this.rootRef,
+      cd: this.state.cd,
+      open: this.open,
+      progress: on ? this.state.progress : 0,
+      veil: this.state.veil,
+      coverOp: on ? 0 : 1,
+      coverSc: on ? 1.07 : 1,
+      coverPE: on ? 'none' : 'auto',
+      coverVis: on ? 'hidden' : 'visible',
+      navOp: on ? (this.state.dim ? 0.55 : 1) : 0,
+      nav: { home: item('home'), couple: item('couple'), story: item('story'), events: item('events'), dua: item('dua') },
+      toggleMusic: this.toggleMusic,
+      musicRun: this.state.music ? 'running' : 'paused',
+      musicLabel: this.state.music ? 'On' : 'Off',
+      musicColor: this.state.music ? (this.props.accent || '#B79A5B') : '#5F6A60'
+    };
+  }
+}
+</script>
+</body>
+</html>
