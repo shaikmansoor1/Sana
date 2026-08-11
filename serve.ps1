@@ -24,7 +24,7 @@ $mime = @{
 }
 
 Write-Host "Serving '$root' at $prefix (Ctrl+C to stop)"
-Write-Host "Open: ${prefix}Wedding%20Invitation.dc.html"
+Write-Host "Open: ${prefix}index.html"
 
 try {
   while ($listener.IsListening) {
@@ -33,7 +33,7 @@ try {
     $response = $context.Response
 
     $localPath = [System.Uri]::UnescapeDataString($request.Url.LocalPath)
-    if ($localPath -eq "/") { $localPath = "/Wedding Invitation.dc.html" }
+    if ($localPath -eq "/") { $localPath = "/index.html" }
 
     $filePath = Join-Path $root ($localPath.TrimStart("/"))
     $fullRoot = (Resolve-Path $root).Path
