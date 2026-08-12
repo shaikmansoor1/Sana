@@ -178,7 +178,9 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
 
         <div style="display:flex;flex-wrap:wrap;align-items:flex-start;justify-content:center;gap:clamp(22px,4vw,70px);margin-top:clamp(40px,5vw,76px);width:100%">
           <article style="flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;align-items:center;animation:fl 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 62%">
-            <img src="art/groom.png" alt="Portrait of Noor Pasha" style="width:clamp(190px,26vw,330px);animation:zin 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 70%" />
+            <div style="position:relative;width:clamp(190px,26vw,330px);aspect-ratio:4/5;border-radius:190px 190px 10px 10px;overflow:hidden;border:1px solid rgba(183,154,91,.45);box-shadow:0 26px 60px -40px rgba(24,60,50,.6);animation:zin 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 70%">
+              <image-slot id="groom" shape="rect" src="art/groom1.png" placeholder="Drop the groom's photograph" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+            </div>
             <h3 style="margin:clamp(18px,2.4vw,30px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(24px,3.2vw,42px);letter-spacing:.12em;color:#183C32">Noor Pasha</h3>
             <span style="display:block;width:44px;height:1px;margin:clamp(12px,1.6vw,18px) 0;background:var(--gold);opacity:.8"></span>
             <p style="margin:0;max-width:300px;font-size:clamp(13px,1.35vw,16px);line-height:2;color:#5F6A60;text-wrap:pretty">A kind heart, a loving soul and the beginning of a beautiful journey.</p>
@@ -190,7 +192,9 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
           </div>
 
           <article style="flex:1 1 300px;max-width:420px;display:flex;flex-direction:column;align-items:center;animation:fr 1.6s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 62%">
-            <img src="art/bride.png" alt="Portrait of Daniya Sultana" style="width:clamp(190px,26vw,330px);animation:zin 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 70%" />
+            <div style="position:relative;width:clamp(190px,26vw,330px);aspect-ratio:4/5;border-radius:190px 190px 10px 10px;overflow:hidden;border:1px solid rgba(183,154,91,.45);box-shadow:0 26px 60px -40px rgba(24,60,50,.6);animation:zin 1.8s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 8% entry 70%">
+              <image-slot id="bride" shape="rect" src="art/bride1.png" placeholder="Drop the bride's photograph" style="position:absolute;inset:0;width:100%;height:100%"></image-slot>
+            </div>
             <h3 style="margin:clamp(18px,2.4vw,30px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(24px,3.2vw,42px);letter-spacing:.12em;color:#183C32">Daniya Sultana</h3>
             <span style="display:block;width:44px;height:1px;margin:clamp(12px,1.6vw,18px) 0;background:var(--gold);opacity:.8"></span>
             <p style="margin:0;max-width:300px;font-size:clamp(13px,1.35vw,16px);line-height:2;color:#5F6A60;text-wrap:pretty">A gentle heart, a strong soul and the reason our journey feels so beautiful.</p>
@@ -250,7 +254,7 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
             <span style="position:absolute;left:calc(clamp(38px,6vw,72px) * -1);top:9px;width:11px;height:11px;margin-left:clamp(6px,1.45vw,18px);border-radius:50%;background:#183C32;box-shadow:0 0 0 5px rgba(24,60,50,.12)"></span>
             <p style="margin:0;font-size:clamp(9px,1vw,11px);letter-spacing:.34em;text-transform:uppercase;color:var(--gold);font-weight:600">05 — The Wedding Day</p>
             <h3 style="margin:10px 0 0;font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(23px,3.2vw,40px);letter-spacing:.02em;color:#183C32">The best day ever</h3>
-            <p style="margin:10px 0 0;max-width:520px;font-size:clamp(13px,1.35vw,16px);line-height:1.95;color:#5F6A60;text-wrap:pretty">The of December, two thousand and twenty-six — the day our two families become one, insha’Allah.</p>
+            <p style="margin:10px 0 0;max-width:520px;font-size:clamp(13px,1.35vw,16px);line-height:1.95;color:#5F6A60;text-wrap:pretty">The Sixteenth Day of August, two thousand and twenty-six — the day our two families become one, Insha’Allah.</p>
           </article>
         </div>
       </div>
@@ -292,7 +296,7 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
             <h3 style="margin:clamp(14px,1.8vw,22px) 0 0;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(21px,2.6vw,32px);letter-spacing:.14em;color:#183C32">VALIMA</h3>
             <span style="display:block;width:52px;height:1px;margin:clamp(12px,1.5vw,18px) 0;background:var(--gold);opacity:.7;transform-origin:center;animation:dx 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 19% entry 74%"></span>
             <p style="margin:0;font-size:clamp(11px,1.2vw,13px);letter-spacing:.2em;text-transform:uppercase;color:#26352F;line-height:2.1">18 August 2026<br />02:00 PM</p>
-            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">Kaaba Shadi Mahal</p>
+            <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">Valima at : Kaaba Shadi Mahal</p>
             <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-size:clamp(12px,1.25vw,14px);line-height:1.9;color:#777267;text-wrap:pretty">Lunch After Namaz-e-zohar,  Near Makkah Masjid, Ramsandar Road, Mulbagal - 563131.</p>
             <a href="https://maps.app.goo.gl/nRD3g8EH7GrxNVtP9" target="_blank" rel="noopener" style="margin-top:clamp(14px,1.8vw,20px);display:inline-flex;align-items:center;gap:9px;padding:12px 24px;background:#183C32;border:1px solid rgba(183,154,91,.6);border-radius:4px;color:#F8F4EA;font-size:clamp(9px,1vw,11px);letter-spacing:.22em;text-transform:uppercase;font-weight:600;box-shadow:0 14px 30px -20px rgba(24,60,50,.75);transition:background .35s ease,transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s ease" style-hover="background:#26352F;transform:translateY(-2px);box-shadow:0 18px 36px -18px rgba(24,60,50,.85)">
               <span style="width:7px;height:7px;border:1px solid var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg)"></span>
@@ -380,7 +384,7 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
           </div>
           <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 22% entry 78%">
             <h3 style="margin:0;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#183C32;font-weight:600">For details</h3>
-            <p style="margin:clamp(14px,1.8vw,20px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.9vw,22px);line-height:1.7;color:#26352F">Noor Pasha<br /><a href="tel:+919886739441" style="font-family:'Manrope',sans-serif;font-size:.62em;letter-spacing:.14em;color:var(--gold)">+91 98765 43210</a></p>
+            <p style="margin:clamp(14px,1.8vw,20px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(16px,1.9vw,22px);line-height:1.7;color:#26352F">Noor Pasha<br /><a href="tel:+919886739441" style="font-family:'Manrope',sans-serif;font-size:.62em;letter-spacing:.14em;color:var(--gold)">+919886739441</a></p>
           </div>
           <div style="animation:fu 1.2s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 24% entry 80%">
             <h3 style="margin:0;font-size:clamp(10px,1.1vw,12px);letter-spacing:.3em;text-transform:uppercase;color:#183C32;font-weight:600">Kindly RSVP</h3>
@@ -389,7 +393,7 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
         </div>
 
         <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(12px,1.8vw,20px);margin-top:clamp(40px,5vw,68px)">
-          <a href="https://wa.me/919876543210?text=We%20will%20be%20there%20insha%27Allah" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:17px clamp(24px,3vw,38px);border-radius:4px;background:#183C32;color:#F8F4EA;font-size:clamp(10px,1.1vw,12px);letter-spacing:.28em;text-transform:uppercase;font-weight:500;box-shadow:0 20px 46px -26px rgba(24,60,50,.9);transition:background .45s ease,transform .45s cubic-bezier(.22,1,.36,1);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 26% entry 82%" style-hover="background:#26352F;color:#F8F4EA;transform:translateY(-2px)">Confirm your presence</a>
+          <a href="https://wa.me/919886739441?text=We%20will%20be%20there%20insha%27Allah" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:17px clamp(24px,3vw,38px);border-radius:4px;background:#183C32;color:#F8F4EA;font-size:clamp(10px,1.1vw,12px);letter-spacing:.28em;text-transform:uppercase;font-weight:500;box-shadow:0 20px 46px -26px rgba(24,60,50,.9);transition:background .45s ease,transform .45s cubic-bezier(.22,1,.36,1);animation:fu 1.3s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 26% entry 82%" style-hover="background:#26352F;color:#F8F4EA;transform:translateY(-2px)">Confirm your presence</a>
         </div>
       </div>
     </section>
@@ -537,7 +541,7 @@ class Component extends DCLogic {
   }
 
   tick() {
-    const iso = this.props.weddingISO || '2026-12-12T19:30:00+05:30';
+    const iso = '2026-08-16T12:15:00+05:30';
     const target = new Date(iso).getTime();
     let diff = Math.max(0, target - Date.now());
     const d = Math.floor(diff / 864e5); diff -= d * 864e5;
