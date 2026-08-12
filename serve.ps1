@@ -19,6 +19,7 @@ $mime = @{
   ".ico"  = "image/x-icon"
   ".json" = "application/json; charset=utf-8"
   ".mp3"  = "audio/mpeg"
+  ".mpeg" = "audio/mpeg"
   ".woff" = "font/woff"
   ".woff2"= "font/woff2"
 }

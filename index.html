@@ -274,6 +274,10 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
             <p style="margin:0;font-size:clamp(11px,1.2vw,13px);letter-spacing:.2em;text-transform:uppercase;color:#26352F;line-height:2.1">16 August 2026<br />12:15 PM</p>
             <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">Nikah at: Makkah Masjid, Rahmathnagar</p>
             <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-size:clamp(12px,1.25vw,14px);line-height:1.9;color:#777267;text-wrap:pretty">Lunch Thereafter at : MS Palace (No 10. Shadi Mahal) Beside Sangam Talkies Mulbagal - 563131.</p>
+            <a href="https://maps.app.goo.gl/aVvW1nJbHhPL2jPn7" target="_blank" rel="noopener" style="margin-top:clamp(14px,1.8vw,20px);display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid rgba(183,154,91,.6);border-radius:4px;color:#183C32;font-size:clamp(9px,1vw,11px);letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:background .35s ease,color .35s ease" style-hover="background:#183C32;color:#F8F4EA">
+              <span style="width:7px;height:7px;border:1px solid var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg)"></span>
+              <span>View Location</span>
+            </a>
           </article>
 
           <article style="position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(30px,3.4vw,44px) clamp(16px,2vw,26px) clamp(26px,3vw,38px);background:linear-gradient(180deg,rgba(255,255,255,.66),rgba(239,230,212,.42));border:1px solid rgba(183,154,91,.34);border-radius:130px 130px 8px 8px;box-shadow:0 26px 60px -46px rgba(24,60,50,.65);animation:fu 1.4s cubic-bezier(.22,1,.36,1) both;animation-timeline:view();animation-range:entry 15% entry 68%">
@@ -284,6 +288,10 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
             <p style="margin:0;font-size:clamp(11px,1.2vw,13px);letter-spacing:.2em;text-transform:uppercase;color:#26352F;line-height:2.1">18 August 2026<br />02:00 PM</p>
             <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,20px);color:#183C32">Kaaba Shadi Mahal</p>
             <p style="margin:clamp(10px,1.2vw,14px) 0 0;font-size:clamp(12px,1.25vw,14px);line-height:1.9;color:#777267;text-wrap:pretty">Lunch After Namaz-e-zohar,  Near Makkah Masjid, Ramsandar Road, Mulbagal - 563131.</p>
+            <a href="https://maps.app.goo.gl/nRD3g8EH7GrxNVtP9" target="_blank" rel="noopener" style="margin-top:clamp(14px,1.8vw,20px);display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border:1px solid rgba(183,154,91,.6);border-radius:4px;color:#183C32;font-size:clamp(9px,1vw,11px);letter-spacing:.22em;text-transform:uppercase;font-weight:600;transition:background .35s ease,color .35s ease" style-hover="background:#183C32;color:#F8F4EA">
+              <span style="width:7px;height:7px;border:1px solid var(--gold);border-radius:50% 50% 50% 0;transform:rotate(-45deg)"></span>
+              <span>View Location</span>
+            </a>
           </article>
         </div>
       </div>
@@ -501,11 +509,14 @@ a:focus-visible,button:focus-visible,image-slot:focus-visible{outline:2px solid 
     <span style="font-size:15px;line-height:1;animation:sp 9s linear infinite;animation-play-state:{{ musicRun }}">♪</span>
     <span style="font-size:7px;letter-spacing:.14em;text-transform:uppercase;font-weight:600">{{ musicLabel }}</span>
   </button>
+
+  <audio ref="{{ audioRef }}" src="audio/background-music.mpeg" loop preload="none" style="display:none"></audio>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;weddingISO&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;2026-12-12T19:30:00+05:30&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Wedding&quot;},&quot;accent&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#B79A5B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#B79A5B&quot;,&quot;#A98545&quot;,&quot;#8C7B4F&quot;,&quot;#C0A97A&quot;],&quot;section&quot;:&quot;Style&quot;},&quot;floral&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;Lush&quot;,&quot;Balanced&quot;,&quot;Minimal&quot;],&quot;default&quot;:&quot;Lush&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Style&quot;},&quot;skipCover&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;},&quot;music&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Behaviour&quot;}}">
 class Component extends DCLogic {
   rootRef = React.createRef();
+  audioRef = React.createRef();
   state = { opened: false, cd: { d: '—', h: '—', m: '—', s: '—' }, active: 'home', veil: 0, music: false, dim: false, progress: 0 };
 
   findScroller() {
@@ -560,6 +571,11 @@ class Component extends DCLogic {
     this.scroller.addEventListener('scroll', this.onScroll, { passive: true });
     window.addEventListener('pointermove', this.onMove, { passive: true });
     window.addEventListener('pointerdown', this.onScroll, { passive: true });
+    const audioEl = this.audioRef.current;
+    if (audioEl) {
+      audioEl.loop = true;
+      audioEl.addEventListener('ended', () => { audioEl.currentTime = 0; audioEl.play().catch(() => {}); });
+    }
     this.wake();
   }
 
@@ -620,47 +636,26 @@ class Component extends DCLogic {
   };
 
   startMusic() {
-    if (this.ctx) return;
-    try {
-      const AC = window.AudioContext || window.webkitAudioContext;
-      if (!AC) return;
-      const ctx = new AC();
-      const master = ctx.createGain();
-      master.gain.value = 0;
-      master.connect(ctx.destination);
-      master.gain.linearRampToValueAtTime(0.055, ctx.currentTime + 4);
-      const drone = ctx.createOscillator();
-      const dg = ctx.createGain();
-      drone.type = 'sine'; drone.frequency.value = 110; dg.gain.value = 0.35;
-      drone.connect(dg); dg.connect(master); drone.start();
-      const scale = [329.63, 392.0, 440.0, 493.88, 587.33, 659.25];
-      let i = 0;
-      const pluck = () => {
-        if (!this.ctx) return;
-        const o = ctx.createOscillator(); const g = ctx.createGain();
-        o.type = 'triangle';
-        o.frequency.value = scale[i % scale.length] / (i % 4 === 0 ? 2 : 1);
-        i += 1 + (Math.random() > 0.6 ? 1 : 0);
-        const t = ctx.currentTime;
-        g.gain.setValueAtTime(0, t);
-        g.gain.linearRampToValueAtTime(0.22, t + 1.1);
-        g.gain.exponentialRampToValueAtTime(0.0008, t + 5.5);
-        o.connect(g); g.connect(master); o.start(t); o.stop(t + 6);
-      };
-      pluck();
-      this.beat = setInterval(pluck, 2600);
-      this.ctx = ctx; this.master = master; this.drone = drone;
-      this.setState({ music: true });
-    } catch (err) { /* audio unavailable */ }
+    const el = this.audioRef.current;
+    if (!el || this.state.music) return;
+    el.loop = true;
+    el.volume = 0;
+    const p = el.play();
+    if (p && p.catch) p.catch(() => {});
+    clearInterval(this.fade);
+    this.fade = setInterval(() => {
+      const a = this.audioRef.current;
+      if (!a) { clearInterval(this.fade); return; }
+      a.volume = Math.min(0.6, a.volume + 0.05);
+      if (a.volume >= 0.6) clearInterval(this.fade);
+    }, 150);
+    this.setState({ music: true });
   }
 
   stopMusic() {
-    clearInterval(this.beat);
-    if (this.ctx) {
-      try { this.master.gain.linearRampToValueAtTime(0, this.ctx.currentTime + 0.8); } catch (e) {}
-      const ctx = this.ctx; this.ctx = null;
-      setTimeout(() => { try { ctx.close(); } catch (e) {} }, 900);
-    }
+    clearInterval(this.fade);
+    const el = this.audioRef.current;
+    if (el) el.pause();
     this.setState({ music: false });
   }
 
@@ -674,6 +669,7 @@ class Component extends DCLogic {
     };
     return {
       rootRef: this.rootRef,
+      audioRef: this.audioRef,
       cd: this.state.cd,
       open: this.open,
       progress: on ? this.state.progress : 0,
